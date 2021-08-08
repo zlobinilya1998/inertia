@@ -30,7 +30,7 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  */
 
 createInertiaApp({
-    resolve: name => require(`./Pages/${name}`),
+    resolve: name => require(`./${name}`),
     setup({ el, App, props }) {
         new Vue({
             render: h => h(App, props),

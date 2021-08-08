@@ -2897,7 +2897,7 @@ vue__WEBPACK_IMPORTED_MODULE_1__.default.component('example-component', __webpac
 
 (0,_inertiajs_inertia_vue__WEBPACK_IMPORTED_MODULE_0__.createInertiaApp)({
   resolve: function resolve(name) {
-    return __webpack_require__("./resources/js/Pages sync recursive ^\\.\\/.*$")("./".concat(name));
+    return __webpack_require__("./resources/js sync recursive ^\\.\\/.*$")("./".concat(name));
   },
   setup: function setup(_ref) {
     var el = _ref.el,
@@ -55900,17 +55900,25 @@ Vue.compile = compileToFunctions;
 
 /***/ }),
 
-/***/ "./resources/js/Pages sync recursive ^\\.\\/.*$":
-/*!*******************************************!*\
-  !*** ./resources/js/Pages/ sync ^\.\/.*$ ***!
-  \*******************************************/
+/***/ "./resources/js sync recursive ^\\.\\/.*$":
+/*!*************************************!*\
+  !*** ./resources/js/ sync ^\.\/.*$ ***!
+  \*************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var map = {
-	"./Index": "./resources/js/Pages/Index.vue",
-	"./Index.vue": "./resources/js/Pages/Index.vue",
-	"./Shop": "./resources/js/Pages/Shop.vue",
-	"./Shop.vue": "./resources/js/Pages/Shop.vue"
+	"./Layouts/MainLayout": "./resources/js/Layouts/MainLayout.vue",
+	"./Layouts/MainLayout.vue": "./resources/js/Layouts/MainLayout.vue",
+	"./Pages/Index": "./resources/js/Pages/Index.vue",
+	"./Pages/Index.vue": "./resources/js/Pages/Index.vue",
+	"./Pages/Shop": "./resources/js/Pages/Shop.vue",
+	"./Pages/Shop.vue": "./resources/js/Pages/Shop.vue",
+	"./app": "./resources/js/app.js",
+	"./app.js": "./resources/js/app.js",
+	"./bootstrap": "./resources/js/bootstrap.js",
+	"./bootstrap.js": "./resources/js/bootstrap.js",
+	"./components/ExampleComponent": "./resources/js/components/ExampleComponent.vue",
+	"./components/ExampleComponent.vue": "./resources/js/components/ExampleComponent.vue"
 };
 
 
@@ -55931,7 +55939,7 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = "./resources/js/Pages sync recursive ^\\.\\/.*$";
+webpackContext.id = "./resources/js sync recursive ^\\.\\/.*$";
 
 /***/ }),
 

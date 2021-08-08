@@ -16,10 +16,10 @@ use App\Http\Controllers\UserController;
 |
 */
 Route::get('/', function () {
-    return inertia('Index',[EventsController::class, 'show']);
+    return Inertia::render('Pages/Index');
 });
 Route::get('/shop', function () {
-    return inertia('Shop',[
+    return inertia('Pages/Shop',[
         'user'
     ]);
 });
