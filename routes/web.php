@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\EventsController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\indexController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,16 +17,8 @@ use App\Http\Controllers\UserController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function () {
-    return Inertia::render('Pages/Index');
-});
-Route::get('/shop', function () {
-    return inertia('Pages/Shop',[
-        'user'
-    ]);
-});
-Route::get('/user', [UserController::class,'index'])->name('user.index');
 
-Auth::routes();
+Route::get('/', [IndexController::class,'show'])->name('index.show');
+Route::get('/admin',[AdminController::class,'show'])->name('admin.show');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+

@@ -3,12 +3,12 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="{{ mix('/css/app.css') }}" rel="stylesheet" />
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        @routes
         <script src="{{ mix('/js/app.js') }}" defer></script>
         <title>Laravel</title>
     </head>
     <body>
-        @routes
         @inertia
     </body>
 </html>

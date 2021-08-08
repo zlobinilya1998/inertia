@@ -4,11 +4,37 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 import Vue from 'vue'
-import { createInertiaApp } from '@inertiajs/inertia-vue'
+import { createInertiaApp } from '@inertiajs/inertia-vue';
+import { InertiaProgress } from '@inertiajs/progress';
+
+import route from 'ziggy';
+import { Ziggy } from './ziggy';
 
 require('./bootstrap');
 
 window.Vue = require('vue').default;
+
+InertiaProgress.init({
+    // The delay after which the progress bar will
+    // appear during navigation, in milliseconds.
+    delay: 250,
+
+    // The color of the progress bar.
+    color: '#29d',
+
+    // Whether to include the default NProgress styles.
+    includeCSS: true,
+
+    // Whether the NProgress spinner will be shown.
+    showSpinner: false,
+})
+
+Vue.mixin({
+    methods: {
+        route: (name, params, absolute, config = Ziggy) => route(name, params, absolute, config),
+    },
+});
+
 
 /**
  * The following block of code may be used to automatically register your
@@ -21,7 +47,6 @@ window.Vue = require('vue').default;
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

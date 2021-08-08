@@ -15,4 +15,10 @@ class UserController extends Controller
            'users' => $users
         ]);
     }
+    public function create()
+    {
+        $users = DB::table('users')->get();
+
+        return Inertia::render('Pages/Index', ['users' => $users]);
+    }
 }
