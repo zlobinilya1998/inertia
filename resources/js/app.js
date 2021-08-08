@@ -6,6 +6,9 @@
 import Vue from 'vue'
 import { createInertiaApp } from '@inertiajs/inertia-vue';
 import { InertiaProgress } from '@inertiajs/progress';
+import VueGoodTablePlugin from 'vue-good-table';
+
+import 'vue-good-table/dist/vue-good-table.css'
 
 import route from 'ziggy';
 import { Ziggy } from './ziggy';
@@ -13,6 +16,7 @@ import { Ziggy } from './ziggy';
 require('./bootstrap');
 
 window.Vue = require('vue').default;
+
 
 InertiaProgress.init({
     // The delay after which the progress bar will
@@ -28,7 +32,7 @@ InertiaProgress.init({
     // Whether the NProgress spinner will be shown.
     showSpinner: false,
 })
-
+Vue.use(VueGoodTablePlugin);
 Vue.mixin({
     methods: {
         route: (name, params, absolute, config = Ziggy) => route(name, params, absolute, config),
