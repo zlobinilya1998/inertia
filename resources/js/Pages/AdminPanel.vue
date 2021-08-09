@@ -3,11 +3,11 @@
         <template #title>Admin panel</template>
         <template #content>
             <ul class="flex">
-                <li class="mr-5 text-blue-600 transition cursor-pointer font-bold" :class="{'text-blue-700': currentContent === 'products'}" @click="currentContent = 'products'">Продукты</li>
-                <li class="text-blue-600 transition cursor-pointer font-bold" :class="{'text-blue-700': currentContent === 'users'}" @click="currentContent = 'users'">Пользователи</li>
+                <li class="mr-5 text-blue-600 transition cursor-pointer font-bold" :class="{'bg-blue-700': currentContent === 'products'}" @click="currentContent = 'products'">Продукты</li>
+                <li class="text-blue-600 transition cursor-pointer font-bold" :class="{'bg-blue-300': currentContent === 'users'}" @click="currentContent = 'users'">Пользователи</li>
             </ul>
             <div class="mt-5">
-                <div v-if="currentContent === 'products'">Products</div>
+                <div v-if="currentContent === 'products'" class="text-blue">Products</div>
                 <div v-else-if="currentContent === 'users'">
                     <vue-good-table :columns="columns" :rows="$page.props.users" :pagination-options="paginationOptions"/>
                 </div>
